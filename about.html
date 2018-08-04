@@ -30,7 +30,7 @@
               <a href="#" class="back link"> <img src="img/ARROW.png" width="16" height="16" alt="" /></a>
             </div>
             <div class="center sliding f18">Select items</div>
-            <div class="right">
+            <div class="right" @click="black()">
               <a href="#" class="link icon-only f18"> Done</a>
             </div>
           </div>
@@ -61,7 +61,7 @@
               			<span v-text="item.time">Now 25°</span>
               			<label class="label-checkbox item-content">
 								        <input type="checkbox" name="my-checkbox" v-model="item.checkBox" value="Movies">
-								        <div class="item-media">
+								        <div class="item-media">                      
 								          <i class="icon icon-form-checkbox"></i>
 								        </div>
 								    </label>
@@ -72,8 +72,8 @@
             <div class="toolbar tabbar tabbar-labels">
 		        <div class="toolbar-inner">
 		        	<a href="#view-1" class="tab-link" style="padding-top: 10px;"> 
-		        		<img src="img/RENAME.png" width="18" height="19" alt="" />
-		        		<span class="tabbar-label">Rename</span>
+		        		<img src="img/RENAME.png" onclick="alert()" width="18" height="19" alt="" />
+		        		<span class="tabbar-label" onclick="alert()">Rename</span>
 		        	</a>
 		        	<a href="#view-2" class="tab-link" style="padding-top: 10px;">
 		        		<img src="img/HIDE.png" width="18" height="19" alt="" />
@@ -161,6 +161,13 @@
     				}
     			}
     		})
+        function alert(){
+          myApp.prompt('Please enter the new name', 'Rename',
+            function (value) {
+              
+            }
+          );
+        }
     		
     </script>
   </body>

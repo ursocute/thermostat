@@ -65,14 +65,14 @@
 				      		<span class="ss">Outside:<span>26°</span></span>
 				      	</p>
 				      	<div class="imgT">
-				      		<p>Setpoint <span v-text="num"></span>°</p>
+				      		<p :disabled="disB==2">Setpoint <span v-text="num"></span>°</p>
 				      		<div class="css">
 				      			<span>Now<img width="15" src="img/DOWN.png" alt="" /></span>
 				      			<span>27°</span>
 				      		</div>
 				      		<div class="cb">
-				      			<span><img width="15"  @click="num--" src="img/jia.png"/></span>
-				      			<span style="margin-left: 20px;"><img @click="num++" width="15" src="img/jian.png"/></span>
+				      			<span :disabled="disB==2"><img width="15"  @click="num--" src="img/jia.png"/></span>
+				      			<span :disabled="disB==2" style="margin-left: 20px;"><img @click="num++" width="15" src="img/jian.png"/></span>
 				      		</div>
 	              	<a href="#" class="button button-round active" v-show="disB==1" style="display: none;" @click="disB=2">
                   		<img src="img/qw-switch.png" width="14" height="15" alt="" />ON
@@ -89,14 +89,14 @@
 				      		<span class="ss" style="font-size: 18px;">Humidity</span>
 				      	</p>
 				      	<div class="imgT imgTs">
-				      		<p>Setpoint <span v-text="num2"></span>%</p>
+				      		<p :disabled="disC==2">Setpoint <span v-text="num2"></span>%</p>
 				      		<div class="css">
 				      			<span>Now<img width="15" src="img/DOWN.png" alt="" /></span>
 				      			<span>65%</span>
 				      		</div>
 				      		<div class="cb">
-				      			<span><img width="15"  @click="num2--" src="img/jia.png"/></span>
-				      			<span style="margin-left: 20px;"><img @click="num2++" width="15" src="img/jian.png"/></span>
+				      			<span :disabled="disC==2"><img width="15"  @click="num2--" src="img/jia.png"/></span>
+				      			<span :disabled="disC==2" style="margin-left: 20px;"><img @click="num2++" width="15" src="img/jian.png"/></span>
 				      		</div>
 		                  	<a href="#" class="button button-round active" v-show="disC==1" style="display: none;" @click="disC=2">
                   		<img src="img/qw-switch.png" width="14" height="15" alt="" />ON
@@ -104,7 +104,7 @@
                   	<a href="#" class="button button-round active off" v-show="disC==2" style="display: none;"  @click="disC=1">
                   		<img src="img/qw-switch2.png" width="14" height="15" alt="" />OFF
                   	</a>
-		                  	<span class="tim"><a href="#" data-picker=".picker-1" class="open-picker"><img src="img/timer.png" width="14" height="16" alt="" /></a></span>
+		                  	<span class="tim" @click="dj()"><a href="#" data-picker=".picker-1" class="open-picker"><img src="img/timer.png" width="14" height="16" alt="" /></a></span>
 				      	</div>
 				      </div>
 				    </div>
