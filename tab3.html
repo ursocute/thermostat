@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>My App</title>
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="style/framework7.ios.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="style/my-app.css">
+	<style>
+		.pgin{
+			background: #FFFFFF;
+			padding: 20px 16px;
+			position: relative;
+		}
+		.pgin p{
+			font-size: 14px;
+			
+		}
+		.pgin span.pSpan{
+			padding: 5px 17px;
+		    border-radius: 15px;
+		    background: #EFEFF4;
+		    position: absolute;
+		    bottom: 10px;
+		    right: 20px;
+		}
+		.pgin span.pSpan:before{
+			  content: " ";
+		    position: absolute;
+		    width: 0;
+		    height: 0;
+		    border-left: 10px solid transparent;
+		    border-right: 10px solid transparent;
+		    border-bottom: 10px solid #EFEFF4;
+		    top: -10px;
+		    right: 60px;
+		}
+		.pgin .pginB{
+			height: 11px;
+			background: #EFEFF4;
+			border-radius: 10px;
+			position: relative;
+			margin-top:8px;
+			margin-bottom: 36px;
+		}
+		.pgin .pginB span:nth-child(1){
+			width: 80%;
+		    height: 100%;
+		    background: #CBE3FF;
+		    display: block;
+		    border-radius: 10px;
+		    position: absolute;
+		    top: 0;
+		}
+		.pgin .pginB span:nth-child(2){
+			width: 40%;
+		    height: 100%;
+		    background: #0076FF;
+		    display: block;
+		    border-radius: 10px;
+		    position: absolute;
+		    top: 0;
+		}
+	</style>
+  </head>
+  <body>
+<div class="views">
+	<div class="view view-main">
+		<div class="navbar" style="background: #FFFFFF;">
+		  <div class="navbar-inner">
+		  	<div class="left">
+              <a href="#" @click="black()" class="back link"> <img src="img/ARROW.png" width="16" height="16" alt="" /></a>
+            </div>
+		    <div class="center tab1">
+		      <div class="buttons-row">
+		        <!-- tab link -->
+		        <a href="#tab1" class="tab-link button" :class="{active: mm == 1}" @click="mm = 1">Living room</a>
+		        <!-- tab2 link -->
+		        <a href="#tab2" class="tab-link button" :class="{active: mm == 2}" @click="mm = 2">Dining room</a>
+		        <!-- tab3 link -->
+		        <a href="#tab3" class="tab-link button" :class="{active: mm == 3}" @click="mm = 3">Dining room</a>
+		   
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<div class="pages" >
+		  <div class="page">
+		    <!-- Tabs -->
+		    <div class="page-content tabs" style="background: #EFEFF4;padding-top: 44px; padding-bottom: 44px;">
+		      <!-- Tab 1 -->
+		      <div id="tab1" class="tab ssk active">
+				  <p class="hh">Weekly budget</p>
+				  <div class="pgin">
+				  	<p>Living room<span class="fr">￡2.8/￡10 <span style="color: #0076FF; padding-left: 10px;"  onclick="alert()">Edit</span></span></p>
+				  	<p class="pginB"><span></span><span></span></p>
+				  	<span class="pSpan">Predicted expense: ￡8.8</span>
+				  </div>
+				  <p class="hh">Comsumption</p>
+				  <div class="pgin">
+				  	<div class="content-block" style="margin: 0; padding: 0;">
+					    <!-- tabs-->
+					    <div class="buttons-row">
+					      <!-- tab1 -->
+					      <a href="#nb1" class="tab-link active button">Hour</a>
+					      <!-- tab2 -->
+					      <a href="#nb2" class="tab-link button">Day</a>
+					      <!-- tab3 -->
+					      <a href="#nb3" class="tab-link button">Week</a>
+					      <a href="#nb4" class="tab-link button">Month</a>
+					    </div>
+					  </div>
+					  <div class="tabs">
+					    <!-- Tab 1 -->
+					    <div id="nb1" class="tab active" style="padding: 19px 10px;"><img src="img/hourx2.png" width="100%" height="269" alt="" /></div>
+					    <div id="nb2" class="tab" style="padding: 19px 10px;"><img src="img/dayx2.png" width="100%" height="269" alt="" /></div>
+					    <div id="nb3" class="tab" style="padding: 19px 10px;"><img src="img/weekx2.png" width="100%" height="269" alt="" /></div>
+					    <div id="nb4" class="tab" style="padding: 19px 10px;"><img src="img/monthx2.png" width="100%" height="269" alt="" /></div>
+					  </div>
+				  </div>
+		      </div>
+		      <!-- Tab 2 -->
+		      <!--<div id="tab2" class="tab ssk">
+		       
+		      </div>-->
+		      <!-- Tab 3 -->
+		      <!--<div id="tab3" class="tab ssk">
+		       
+		      </div>-->
+		    </div>
+		    <div class="toolbar tabbar tabbar-labels">
+		        <div class="toolbar-inner">
+		        	<a href="#" @click="tab1()" class="tab-link" style="padding-top: 10px;"> 
+		        		<img src="img/ADJUSTMENT2.png" width="18" height="19" alt="" />
+		        		<span class="tabbar-label">Adjustment</span>
+		        	</a>
+		        	<a href="" class="tab-link active" style="padding-top: 10px;">
+		        		<img src="img/ENERGY.png" width="18" height="19" alt="" />
+		        		<span class="tabbar-label">Energy</span>
+		        	</a>
+		        	<a href="#" @click="tab4()" class="tab-link" style="padding-top: 10px;"> 
+		        		<img src="img/SCHEDULE2.png" width="18" height="19" alt="" />
+		        		<span class="tabbar-label">Schedule</span>
+		        	</a>
+		        </div>
+		      </div>
+		  </div>
+		</div>
+	</div>
+</div>
+  <script type="text/javascript" src="style/framework7.min.js"></script>
+	<script src="https://lib.baomitu.com/vue/2.5.17-beta.0/vue.min.js"></script>
+	<!-- Path to your app js-->
+	<script type="text/javascript" src="style/my-app.js"></script>
+	<script>
+		var demo = new Vue({
+			el: ".views",
+			data:{
+				mm: 1
+			},
+			methods:{
+				black(){
+					location.href = 'index.html';
+				},
+				tab1(){
+					location.href = 'tab.html';
+				},
+				tab4(){
+					location.href = 'tab4.html';
+				}
+			}
+		})
+		function alert(){
+	    		myApp.prompt('Please enter the new budget for living room', 'Edit Budget',
+			      function (value) {
+			        
+			      }
+			    );
+	    	}
+	</script>
+ </body>
+</html>

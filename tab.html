@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>My App</title>
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="style/framework7.ios.min.css">
+    <link rel="stylesheet" href="style/framework7.ios.colors.min.css">
+    <link rel="stylesheet" href="style/swiper.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="style/my-app.css">
+	<style>
+		.bColor{
+			background: #FFBC00 !important;
+		}
+		.tabs .tab{
+			/*display: block;*/
+		}
+		.swiper-container{
+			overflow: inherit;
+		}
+		.swiper-container-horizontal>.swiper-pagination{
+			bottom: -50px !important;
+		}
+	</style>
+  </head>
+  <body>
+<div class="views" id="tabM">
+	<div class="view view-main">
+		<div class="navbar" style="background: #FFFFFF;">
+		  <div class="navbar-inner">
+		  	<div class="left">
+              <a href="#" @click="back()" class="back link"> <img src="img/ARROW.png" width="16" height="16" alt="" /></a>
+            </div>
+		    <div class="center tab1">
+		    	
+		      <!-- tab -->
+		      <div class="buttons-row">
+		        <!-- tab1 link -->
+		        <a href="#tab1" class="tab-link button" :class="{active: mm == 1}" @click="mm = 1">Living room</a>
+		        <!-- tab2 link -->
+		        <a href="#tab2" class="tab-link button" :class="{active: mm == 2}" @click="mm = 2">Dining room</a>
+		        <!-- tab3 link -->
+		        <a href="#tab3" class="tab-link button" :class="{active: mm == 3}" @click="mm = 3">Dining room</a>
+		   
+		      </div>
+		    </div>
+		  </div>
+		</div>
+		<div class="pages" >
+		  <div class="page">
+		    <!-- Tabs -->
+		    <div class="page-content tabs" style="background: #EFEFF4; padding-top: 100px;">
+		      <!-- Tab 1 -->
+		      <div id="tab1" class="tab active" >
+		      	<!-- Slider -->
+				  <div class="swiper-container" id="swiper-1">
+				    <div class="swiper-wrapper">
+				      <div class="swiper-slide">
+				      	<p>
+				      		<img src="img/WEATHER.png" width="43" height="43" alt="" />
+				      		<span class="ss">Outside:<span>26°</span></span>
+				      	</p>
+				      	<div class="imgT">
+				      		<p>Setpoint <span v-text="num"></span>°</p>
+				      		<div class="css">
+				      			<span>Now<img width="15" src="img/DOWN.png" alt="" /></span>
+				      			<span>27°</span>
+				      		</div>
+				      		<div class="cb">
+				      			<span><img width="15"  @click="num--" src="img/jia.png"/></span>
+				      			<span style="margin-left: 20px;"><img @click="num++" width="15" src="img/jian.png"/></span>
+				      		</div>
+	              	<a href="#" class="button button-round active" v-show="disB==1" style="display: none;" @click="disB=2">
+                  		<img src="img/qw-switch.png" width="14" height="15" alt="" />ON
+                  	</a>
+                  	<a href="#" class="button button-round active off" v-show="disB==2" style="display: none;"  @click="disB=1">
+                  		<img src="img/qw-switch2.png" width="14" height="15" alt="" />OFF
+                  	</a>
+	              	<span class="tim" @click="dj()"><a href="#" ><img src="img/timer.png" width="14" height="16" alt="" /></a></span>
+				      	</div>
+				      </div>
+				      <div class="swiper-slide">
+				      	<p>
+				      		<img src="img/HUMIDITY.png" width="23" alt="" />
+				      		<span class="ss" style="font-size: 18px;">Humidity</span>
+				      	</p>
+				      	<div class="imgT imgTs">
+				      		<p>Setpoint <span v-text="num2"></span>%</p>
+				      		<div class="css">
+				      			<span>Now<img width="15" src="img/DOWN.png" alt="" /></span>
+				      			<span>65%</span>
+				      		</div>
+				      		<div class="cb">
+				      			<span><img width="15"  @click="num2--" src="img/jia.png"/></span>
+				      			<span style="margin-left: 20px;"><img @click="num2++" width="15" src="img/jian.png"/></span>
+				      		</div>
+		                  	<a href="#" class="button button-round active" v-show="disC==1" style="display: none;" @click="disC=2">
+                  		<img src="img/qw-switch.png" width="14" height="15" alt="" />ON
+                  	</a>
+                  	<a href="#" class="button button-round active off" v-show="disC==2" style="display: none;"  @click="disC=1">
+                  		<img src="img/qw-switch2.png" width="14" height="15" alt="" />OFF
+                  	</a>
+		                  	<span class="tim"><a href="#" data-picker=".picker-1" class="open-picker"><img src="img/timer.png" width="14" height="16" alt="" /></a></span>
+				      	</div>
+				      </div>
+				    </div>
+				    <!-- Add Pagination -->
+				    <div class="swiper-pagination" id="pagin1"></div>
+				  </div>
+				  
+		      </div>
+		      <!-- Tab 2 -->
+		      <!--<div id="tab2" class="tab" >-->
+		        
+		      <!--</div>-->
+		      <!-- Tab 3 -->
+		      <!--<div id="tab3" class="tab" >-->
+		        
+		      <!--</div>-->
+		    </div>
+		    <div class="toolbar tabbar tabbar-labels">
+		        <div class="toolbar-inner">
+		        	<a href="#" class="tab-link active" style="padding-top: 10px;"> 
+		        		<img src="img/ADJUSTMENT.png" width="18" height="19" alt="" />
+		        		<span class="tabbar-label">Adjustment</span>
+		        	</a>
+		        	<a href="#" @click="tab3()" class="tab-link" style="padding-top: 10px;">
+		        		<img src="img/ENERGY2.png" width="18" height="19" alt="" />
+		        		<span class="tabbar-label">Energy</span>
+		        	</a>
+		        	<a href="#view-3" @click="tab4()" class="tab-link" style="padding-top: 10px;"> 
+		        		<img src="img/SCHEDULE2.png" width="18" height="19" alt="" />
+		        		<span class="tabbar-label">Schedule</span>
+		        	</a>
+		        </div>
+		      </div>
+		  </div>
+		</div>
+		
+	</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+<!-- Path to Framework7 Library JS-->
+<script type="text/javascript" src="style/framework7.min.js"></script>
+<script type="text/javascript" src="style/swiper.min.js"></script>
+<!--<script src="https://lib.baomitu.com/vue/2.5.17-beta.0/vue.min.js"></script>-->
+<!-- Path to your app js-->
+<script type="text/javascript" src="style/my-app.js"></script>
+    
+<script>
+	var demo = new Vue({
+		el:'#tabM',
+		data:{
+			disB: 1,
+			disC: 1,
+			mm: 1,
+			num: 23,
+			num2: 57
+		},
+		methods:{
+			dj(){
+				location.href = 'tab2.html'
+			},
+			tab3(){
+				location.href = "tab3.html"
+			},
+			tab4(){
+				location.href = "tab4.html"
+			},
+			back(){
+				location.href = 'index.html'
+			}
+		}
+	})
+	var swiper = new Swiper('#swiper-1', {
+      slidesPerView: 'auto',
+      centeredSlides: true,
+      spaceBetween: 30,
+      pagination: {
+        el: '#pagin1',
+        clickable: true,
+      },
+    });
+    var swiper2 = new Swiper('#swiper-2', {
+      slidesPerView: 'auto',
+      centeredSlides: true,
+      spaceBetween: 30,
+      pagination: {
+        el: '#pagin2',
+        clickable: true,
+      },
+    });
+    var swiper3 = new Swiper('#swiper-3', {
+      slidesPerView: 'auto',
+      centeredSlides: true,
+      spaceBetween: 30,
+      pagination: {
+        el: '#pagin3',
+        clickable: true,
+      },
+    });
+    
+</script>
+  </body>
+</html>

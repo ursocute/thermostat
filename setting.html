@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>My App</title>
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="style/framework7.ios.min.css">
+    <link rel="stylesheet" href="style/framework7.ios.colors.min.css">
+    <!--<link rel="stylesheet" href="style/app.css" />-->
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="style/my-app.css">
+		<style type="text/css">
+			.list{
+				margin-top: 32px;
+			}
+			.list p{
+				font-size: 13px;
+				height: 18px;
+				line-height: 18px;
+				padding-left: 16px;
+				margin-bottom: 5px;
+				display: block;
+			}
+			.list .btm{
+				position: relative;
+		    background: #fff;
+		    padding: 0 16px;
+		    height: 44px;
+		    line-height: 44px;
+		    font-size: 17px;
+			}
+			.list .btm label{
+				line-height: 44px;
+				height: 44px;
+		    float: right;
+			}
+			.list .btm label .checkbox{
+				margin-top: 5px;
+			}
+			p.text{
+				font-size: 13px;
+				padding: 13px 16px;
+				line-height: 18px;
+			}
+		</style>
+  </head>
+  <body>
+    
+    <!-- Views-->
+    <div class="views" id="about">
+      <!-- Your main view, should have "view-main" class-->
+      <div class="view view-main">
+        <!-- Top Navbar-->
+        <div class="navbar" style="background: #FFFFFF;">
+          <div class="navbar-inner">
+            <div class="left">
+              <a href="index.html" class="back link"> <img src="img/ARROW.png" width="16" height="16" alt="" /></a>
+            </div>
+            <div class="center sliding f18" style="margin: 0 auto;">Setting</div>
+          </div>
+        </div>
+        <div class="pages navbar-through toolbar-through ">
+          <div data-page="index" class="page">
+            <div class="page-content" style="background: #EFEFF4">
+              <div class="list">
+              	<p>BUDGET</p>
+              	<div class="borderBom btm">Weekly Budget <label>￡10</label></div>
+              </div>
+              <div class="list">
+              	<p>NOTIFICATION</p>
+              	<div class="borderBom btm">Timer Notification 
+	          			<label class="label-switch">
+			              <input type="checkbox" checked="checked">
+			              <div class="checkbox"></div>
+			            </label>
+              	</div>
+              	<div class="borderBom btm">Energy Suggestion Notification 
+	          			<label class="label-switch">
+			              <input type="checkbox" checked="checked">
+			              <div class="checkbox"></div>
+			            </label>
+              	</div>
+              </div>
+              <div class="list">
+              	<p>SCHEDULE</p>
+              	<div class="borderBom btm">Display Temperature 
+	          			<label class="label-switch">
+			              <input type="checkbox" checked="checked">
+			              <div class="checkbox"></div>
+			            </label>
+              	</div>
+              </div>
+              <div class="list">
+              	<p>Away Mode</p>
+              	<div class="borderBom btm">Away Mode
+	          			<label class="label-switch">
+			              <input type="checkbox" checked="checked">
+			              <div class="checkbox"></div>
+			            </label>
+              	</div>
+              </div>
+              <p class="text">
+              	The Away Mode turns off the thermostat for a period when you are not at home, such as business trip
+              </p>
+             </div>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="style/framework7.min.js"></script>
+    <!--<script src="https://lib.baomitu.com/vue/2.5.17-beta.0/vue.min.js"></script>-->
+    <!-- Path to your app js-->
+    <!--<script type="text/javascript" src="style/my-app.js"></script>-->
+    
+    
+  </body>
+</html>

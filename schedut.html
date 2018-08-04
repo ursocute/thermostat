@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no, minimal-ui">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <title>My App</title>
+    <!-- Path to Framework7 Library CSS-->
+    <link rel="stylesheet" href="style/framework7.ios.min.css">
+    <link rel="stylesheet" href="style/framework7.ios.colors.min.css">
+    <!-- Path to your custom app styles-->
+    <link rel="stylesheet" href="style/my-app.css">
+	<style>
+		.bColor{
+			background: #FFBC00 !important;
+		}
+		.content p{
+			  background: #FFFFFF;
+		    padding: 20px 26px 64px 23px;
+		    margin-bottom: 5px;
+		    position: relative;
+		}
+		.content p span{
+			font-size: 16px;
+			padding: 5px 26px;
+			background: #EFEFF4;
+			position: absolute;
+			bottom: 20px;
+			right: 19px;
+			color: #007AFF;
+			border-radius: 20px;
+		}
+	</style>
+  </head>
+  <body>
+    
+    <!-- Views-->
+    <div class="views" id="about">
+      <!-- Your main view, should have "view-main" class-->
+      <div class="view view-main">
+        <!-- Top Navbar-->
+        <div class="navbar">
+          <div class="navbar-inner">
+            <div class="left" @click="black()">
+              <a href="#" class="back link"> <img src="img/ARROW.png" width="16" height="16" alt="" /></a>
+            </div>
+            <div class="center sliding f18">Overall Schedule</div>
+          </div>
+        </div>
+        <!-- Pages, because we need fixed-through navbar and toolbar, it has additional appropriate classes-->
+        <div class="pages navbar-through toolbar-through ">
+          <!-- Page, data-page contains page name-->
+          <div data-page="index" class="page">
+            <!-- Scrollable page content-->
+            <div class="page-content" style="background: #EFEFF4;">
+              <div class="content" style="margin-top: 30px;">
+              	<p><img src="img/tuex2.png" width="100%" alt="" /><span @click="dj()">Discover</span></p>
+              	<p><img src="img/wedx2.png" width="100%" alt="" /><span @click="dj()">Discover</span></p>
+              	<p><img src="img/monx2.png" width="100%" alt="" /><span @click="dj()">Discover</span></p>
+              </div>
+            </div>
+            
+          </div>
+        </div>
+        
+      </div>
+    </div>
+	<script src="https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js"></script>
+    <!-- Path to Framework7 Library JS-->
+    <script type="text/javascript" src="style/framework7.min.js"></script>
+    <!--<script src="https://lib.baomitu.com/vue/2.5.17-beta.0/vue.min.js"></script>-->
+    <!-- Path to your app js-->
+    <script type="text/javascript" src="style/my-app.js"></script>
+    
+    <script>
+    		var demo = new Vue({
+    			el:'#about',
+    			data:{
+    				
+    			},
+    			methods:{
+    				black(){
+    					location.href="index.html"
+    				},
+    				dj(){
+    					location.href="tab4.html"
+    				}
+    			}
+    		})
+    		
+    </script>
+  </body>
+</html>
