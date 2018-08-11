@@ -31,7 +31,7 @@
         	<li onclick="energy()"><font color="black">Energy</font></li>
         	<li onclick="schedut()"><font color="black">Schedule</font></li>
         	<li onclick="setting()"><font color="black">Setting</font></li>
-        	<li><font color="black">Help</font></li>
+        	<li onclick="help()"><font color="black">Help</font></li>
         </ul>
       </div>
     </div>
@@ -161,7 +161,6 @@
 	    </div>
 	    
 	  </div>
-	  <!--<script src="https://lib.baomitu.com/vue/2.5.17-beta.0/vue.min.js"></script>-->
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
     <!-- Path to Framework7 Library JS-->
     <script type="text/javascript" src="style/framework7.min.js"></script>
@@ -222,6 +221,13 @@
 			      }
 			    );
 	    	}
+        function help(){
+          myApp.prompt('Please tell us the problem you have', 'Help',
+            function (value) {
+              
+            }
+          );
+        }
     		function setting(){
     			location.href = 'setting.html'
     		}
