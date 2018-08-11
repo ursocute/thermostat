@@ -44,7 +44,11 @@
 				font-size: 13px;
 				padding: 13px 16px;
 				line-height: 18px;
+        color: #8F8E94;
 			}
+      p.title{
+        color: #8F8E94;
+      }
 		</style>
   </head>
   <body>
@@ -57,7 +61,7 @@
         <div class="navbar" style="background: #FFFFFF;">
           <div class="navbar-inner">
             <div class="left">
-              <a href="index.html" class="back link"> <img src="img/ARROW.png" width="16" height="16" alt="" /></a>
+              <a href="index.html" class="back link" onclick="back()"> <img src="img/ARROW.png" width="16" height="16" alt="" /></a>
             </div>
             <div class="center sliding f18" style="margin: 0 auto;">Setting</div>
           </div>
@@ -66,11 +70,11 @@
           <div data-page="index" class="page">
             <div class="page-content" style="background: #EFEFF4">
               <div class="list">
-              	<p>BUDGET</p>
-              	<div class="borderBom btm">Weekly Budget <label>￡10</label></div>
+              	<p class="title">BUDGET</p>
+              	<div class="borderBom btm" onclick="alert()">Weekly Budget <span class="jiantou" style="padding-right: 10px;"><label style="padding-right: 12px;">￡10</label></span></div>
               </div>
               <div class="list">
-              	<p>NOTIFICATION</p>
+              	<p class="title">NOTIFICATION</p>
               	<div class="borderBom btm">Timer Notification 
 	          			<label class="label-switch">
 			              <input type="checkbox" checked="checked">
@@ -85,7 +89,7 @@
               	</div>
               </div>
               <div class="list">
-              	<p>SCHEDULE</p>
+              	<p class="title">SCHEDULE</p>
               	<div class="borderBom btm">Display Temperature 
 	          			<label class="label-switch">
 			              <input type="checkbox" checked="checked">
@@ -94,7 +98,7 @@
               	</div>
               </div>
               <div class="list">
-              	<p>Away Mode</p>
+              	<p class="title">AWAY MODE</p>
               	<div class="borderBom btm">Away Mode
 	          			<label class="label-switch">
 			              <input type="checkbox" checked="checked">
@@ -118,8 +122,19 @@
     <script type="text/javascript" src="style/framework7.min.js"></script>
     <!--<script src="https://lib.baomitu.com/vue/2.5.17-beta.0/vue.min.js"></script>-->
     <!-- Path to your app js-->
-    <!--<script type="text/javascript" src="style/my-app.js"></script>-->
-    
-    
+    <script type="text/javascript" src="style/my-app.js"></script>
+  <script>
+      function alert(){
+            myApp.prompt('Please enter the new weekly budget', 'Edit Budget',
+              function (value) {
+                
+              }
+            );
+          }
+      function back(){
+            location.href = 'index.html'
+          }
+               
+  </script>  
   </body>
 </html>
