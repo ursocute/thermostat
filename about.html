@@ -152,7 +152,9 @@
     				addTag(){
     					var _this = this;
     					var data = _this.trData;
+              <!-- f1 is the number of orange highlighted item the user has select-->
               var f1 = 0;
+              <!-- f2 is the number of non-highlighted item the user has select-->
               var f2 = 0;
     					console.log(data);
     					for(var i=0; i<data.length; i++){
@@ -169,6 +171,7 @@
                   }
     						}
     					}
+              <!-- if both the highlighted and non-hilghlighted items have been selected, then highlight all of them-->
               if (f1>0 && f2>0) {
                 for(var i=0; i<data.length; i++){
                   if(data[i]['checkBox']){
@@ -182,7 +185,9 @@
             hide(){
               var _this = this;
               var data = _this.trData;
+              <!-- o1 is the number of inactive item the user has select-->
               var o1 = 0;
+              <!-- o2 is the number of normal item the user has select-->
               var o2 = 0;
               console.log(data);
               for(var i=0; i<data.length; i++){
@@ -200,6 +205,7 @@
                   
                 }
               }
+              <!-- if both the normal and inactive items have been selected, then hide all of them-->
               if (o1>0 && o2>0) {
                 for(var i=0; i<data.length; i++){
                   if(data[i]['checkBox']){
