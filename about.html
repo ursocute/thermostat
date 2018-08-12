@@ -152,23 +152,60 @@
     				addTag(){
     					var _this = this;
     					var data = _this.trData;
+              var f1 = 0;
+              var f2 = 0;
     					console.log(data);
     					for(var i=0; i<data.length; i++){
     						if(data[i]['checkBox']){
-    							data[i]['fTr'] = true;
-                  data[i]['Op'] = false
+                  if (data[i]['fTr']) {
+                    data[i]['fTr'] = false;
+                    data[i]['Op'] = false
+                    f1++;
+                  }
+                  else if (!data[i]['fTr']) {
+                    data[i]['fTr'] = true;
+                    data[i]['Op'] = false
+                    f2++;
+                  }
     						}
     					}
+              if (f1>0 && f2>0) {
+                for(var i=0; i<data.length; i++){
+                  if(data[i]['checkBox']){
+                    data[i]['fTr'] = true;
+                    data[i]['Op'] = false
+                  }
+                }
+              }
     					_this.trData = data;
     				},
             hide(){
               var _this = this;
               var data = _this.trData;
+              var o1 = 0;
+              var o2 = 0;
               console.log(data);
               for(var i=0; i<data.length; i++){
                 if(data[i]['checkBox']){
-                  data[i]['Op'] = true;
-                  data[i]['fTr'] = false
+                  if (data[i]['Op']) {
+                    data[i]['Op'] = false;
+                    data[i]['fTr'] = false;
+                    o1++;
+                  }
+                  else if (!data[i]['Op']) {
+                    data[i]['Op'] = true;
+                    data[i]['fTr'] = false;
+                    o2++;
+                  }
+                  
+                }
+              }
+              if (o1>0 && o2>0) {
+                for(var i=0; i<data.length; i++){
+                  if(data[i]['checkBox']){
+                    data[i]['fTr'] = false;
+                    data[i]['Op'] = true
+                  }
                 }
               }
               _this.trData = data;
